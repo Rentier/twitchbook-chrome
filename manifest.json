@@ -1,0 +1,23 @@
+{
+	"manifest_version": 2,
+
+	"name": "TwitchBook",
+	"description": "This extension adds Twich emoticons to Facebook chat",
+	"version": "0.1",
+
+	"permissions": [
+		"https://www.facebook.com/messages/*"
+	],
+
+	"browser_action": {
+		"default_icon": "icon.png",
+		"default_popup": "popup.html"
+	},
+
+    "content_scripts" : [
+        {
+            "matches": ["https://www.facebook.com/messages/*"],
+            "js" : ["jquery.min.js", "twitchbook.js"]
+        }
+    ]
+}
